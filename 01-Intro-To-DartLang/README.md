@@ -78,3 +78,7 @@ E.g.: pie = 3.14; is a constant while date = DateTime.now() is final because the
 
 <u>&& OPERATOR</u>: Both conditions must be true  
 <u>|| OPERATOR</u>: If either condition is true
+
+## 3. <u>Lists</u>
+
+A **List** is simply an ordered group of any Datatype. It is commonly known as Arrays in other languages Each element in the List is identified by a unique number called the **index**. The index starts from 0 and extends to **n-1** where **n** is the total number of elements in the List.

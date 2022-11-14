@@ -1,4 +1,4 @@
-## 1. Variables and Data type
+## 1. <u>Variables and Data type</u>
 
 **Variables** are used to store information to be referenced and manipulated later
 
@@ -16,7 +16,7 @@ or
 var age = 25;  
 **Use Var keyword if we don't know what value will be assigned to the variable**
 
-## 2. String & String interpolation
+## 2. <u>String & String interpolation</u>
 
 Strings are just collection of characters. We can declare a String with both single and double quotes
 
@@ -52,3 +52,20 @@ int length = 20;
 int breadth = 10;
 print("Sum is ${length + breadth}");
 ```
+
+## 3. <u>Final & Const Keywords</u>
+
+These are used when we know that the value will be constant and can't be changed later
+
+**Const Keyword:** Const is used if the value is known at compile time. In simple words while development we hardcore the value.
+
+```
+const int marks = 90;
+// marks = 50; // this will show error
+```
+
+**Final Keyword:** Suppose we don't know the value while writing code but the value will be calculated Or fetched from database at runtime. And we don't want the value to be changed after Being fetched and assigned to a variable.
+
+`final String name = "Flutter;`
+
+E.g.: pie = 3.14; is a constant while date = DateTime.now() is final because the date is being fetched at runtime

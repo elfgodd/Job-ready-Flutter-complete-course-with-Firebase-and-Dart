@@ -69,3 +69,12 @@ const int marks = 90;
 `final String name = "Flutter;`
 
 E.g.: pie = 3.14; is a constant while date = DateTime.now() is final because the date is being fetched at runtime
+
+## 3. <u>Conditional Statements</u>
+
+**IF ELSE:** If the condition is true then run the code else run another code  
+**IF ELSE IF:** If you have multiple conditions  
+**AND / OR OPERATOR:** Two conditions can be joined using && i.e. AND otherwise Using || i.e. OR Operator
+
+<u>&& OPERATOR</u>: Both conditions must be true  
+<u>|| OPERATOR</u>: If either condition is true

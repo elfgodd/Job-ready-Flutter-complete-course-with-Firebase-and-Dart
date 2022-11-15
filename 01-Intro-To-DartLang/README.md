@@ -70,7 +70,7 @@ const int marks = 90;
 
 E.g.: pie = 3.14; is a constant while date = DateTime.now() is final because the date is being fetched at runtime
 
-## 3. <u>Conditional Statements</u>
+## 4. <u>Conditional Statements</u>
 
 **IF ELSE:** If the condition is true then run the code else run another code  
 **IF ELSE IF:** If you have multiple conditions  
@@ -79,6 +79,12 @@ E.g.: pie = 3.14; is a constant while date = DateTime.now() is final because the
 <u>&& OPERATOR</u>: Both conditions must be true  
 <u>|| OPERATOR</u>: If either condition is true
 
-## 3. <u>Lists</u>
+## 5. <u>Lists</u>
 
 A **List** is simply an ordered group of any Datatype. It is commonly known as Arrays in other languages Each element in the List is identified by a unique number called the **index**. The index starts from 0 and extends to **n-1** where **n** is the total number of elements in the List.
+
+## 6. <u>Map</u>
+
+The Map object is a simply key/value pair. Key will be of String type but the values in a map may be of any type. To declare a map, we can use the Map constructor or you need to enclose the key-value pairs within a pair of curly brackets "{};"
+
+var variable_name = {key1: value1, key2: value2, ......}

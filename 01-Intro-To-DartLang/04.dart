@@ -1,5 +1,5 @@
 void main() {
-  // Declaring Variables
+  // Conditional Statements
 
   // using const so that number of stones cannot be changed
   const int stones = 6;

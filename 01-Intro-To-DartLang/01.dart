@@ -1,5 +1,6 @@
 void main() {
-  // Declaring Variables
+  // Variables and Data type
+
   int score = 3000;
   double percentage = 92.5;
   String hero = "Trunks";

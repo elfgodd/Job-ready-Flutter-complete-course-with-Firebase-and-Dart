@@ -1,7 +1,8 @@
 void main() {
-// Declaring Variables
+  // Maps
 
-// using Map constructor
+  // using Map constructor
+
   Map fruits = Map();
   fruits['apple'] = 'red';
 

@@ -88,3 +88,74 @@ A **List** is simply an ordered group of any Datatype. It is commonly known as A
 The Map object is a simply key/value pair. Key will be of String type but the values in a map may be of any type. To declare a map, we can use the Map constructor or you need to enclose the key-value pairs within a pair of curly brackets "{};"
 
 var variable_name = {key1: value1, key2: value2, ......}
+
+## 7. <u>Looping Statements</u>
+
+Loops are used to output data multiple number of times.
+
+Loops: FOR, FOR IN, While, Do while
+
+<u>FOR LOOP</u>
+The **for loop** executes a block of code for a specified number of times.
+
+```
+for (initialization; condition; step) {
+  // Statements
+}
+
+for(int i = 0; i < 3, i++) {
+  print(i);
+}
+```
+
+<u>FOR..IN LOOP</u>
+The **for..in loop** is used to loop through a List or Map. Is used most of the time.
+
+```
+for(variableName in object) {
+  // code to execute
+}
+
+var collection = [1, 2, 3, 4, 5];
+  for(var a in collection) {
+    print(a);
+  }
+
+var marks = {'alberto': 90, 'josue': 85};
+  for(var a in marks.entries) {
+    print(a.key);
+    print(a.value);
+  }
+```
+
+<u>WHILE LOOP</u>
+We mostly use **while loop** when we don't know how many times the loop will actually execute. Here In example we know the limit, but suppose play music until user press stop.
+
+```
+while(condition) {
+  // Statements to be executed if the condition is true
+}
+
+int number = 0;
+while (number < 10) {
+  if(number % 2 == 0) {
+    print(number);
+    number++;
+  }
+}
+```
+
+<u>DO WHILE LOOP</u>
+**do-while loop** first executes the statements and then check for the condition
+
+```
+do {
+  Statements(s) to be executed;
+} while (condition)
+
+var i = 6;
+do {
+  print(i);
+  i++;
+} while(i <= 5);
+```

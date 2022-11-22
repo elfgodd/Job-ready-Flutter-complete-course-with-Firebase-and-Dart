@@ -1,7 +1,8 @@
 void main() {
-  // Declaring Variables
+  // Lists
 
   // List marks = [];
+
   List marks = [90, 80, 60, 30];
   // index     [ 0 , 1 , 2 , 3 ]
 

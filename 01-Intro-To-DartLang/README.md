@@ -159,3 +159,21 @@ do {
   i++;
 } while(i <= 5);
 ```
+
+## 8. <u>Break and Continue Statements</u>
+
+// Break
+for(var i = 0; i < 5; i++>) {
+if(i == 2) {
+break;
+}
+print(i);
+}
+
+// Continue
+for(var j = 0; j < 5; j++>) {
+if(j == 2) {
+continue;
+}
+print(j);
+}

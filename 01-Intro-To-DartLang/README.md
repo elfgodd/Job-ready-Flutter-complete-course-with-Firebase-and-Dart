@@ -162,18 +162,92 @@ do {
 
 ## 8. <u>Break and Continue Statements</u>
 
+```
 // Break
-for(var i = 0; i < 5; i++>) {
-if(i == 2) {
-break;
-}
-print(i);
-}
 
+for(var i = 0; i < 5; i++>) {
+  if(i == 2) {
+  break;
+  }
+  print(i);
+}
+```
+
+```
 // Continue
 for(var j = 0; j < 5; j++>) {
-if(j == 2) {
-continue;
+  if(j == 2) {
+  continue;
+  }
+  print(j);
+  }
+```
+
+## 9. <u>Declaring Functions and Short hand Syntax</u>
+
+### <u>FUNCTION IN DART</u>
+
+Function is just a collection of codes or statements grouped together to perform a task
+
+- Return type (optional but recommended): Int
+- Function name: findArea
+- Parameter or Arguments: (int length, int breath)
+
+```
+Int findArea(int length, int breadth) {
+  // function body
+  return length * breadth
 }
-print(j);
+```
+
+Suppose if we are not returning anything then we can use Void as a return type
+
+### <u>WAYS TO WRITE A FUNCTION</u>
+
+Function without passing arguments
+
+```
+void main() {
+  findPerimeter();
 }
+
+void findPerimeter() {
+  int length = 4;
+  int breadth = 2;
+  int perimeter = 2 * (length + breadth);
+  print('The perimeter is $perimeter);
+}
+```
+
+Function with arguments
+
+```
+void main() {
+  findPerimeter(4, 2);
+}
+
+void findPerimeter(int length, int breadth) {
+  int perimeter = 2 * (length + breadth);
+  print('The perimeter is $perimeter');
+}
+```
+
+Function with Arguments and a return type
+
+```
+int findPerimeter(int length, int breadth) {
+  int perimeter = 2 \* (length + breadth);
+  return perimeter;
+}
+```
+
+SHORT HAND SYNTAX / FAT ARROW  
+If our function body contains only one line of code / statement then we use => to declare the function and make it look short
+
+```
+void main() {
+  findPerimeter(4, 2)
+}
+
+void findPerimeter(int length, int breadth) => print('The perimeter is ${2 * (length + breadth)}');
+```

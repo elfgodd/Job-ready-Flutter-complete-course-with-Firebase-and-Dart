@@ -246,8 +246,83 @@ If our function body contains only one line of code / statement then we use => t
 
 ```
 void main() {
-  findPerimeter(4, 2)
+  findPerimeter(4, 2);
 }
 
 void findPerimeter(int length, int breadth) => print('The perimeter is ${2 * (length + breadth)}');
 ```
+
+## 10. <u>Types of Parameters in Function</u>
+
+Parameter:
+
+- Optional -> Positional, Named, Default
+- Required
+
+### <u>Required Parameter</u>
+
+```
+void main() {
+  printName('hulk', 'Ironman', 'Spiderman');
+}
+
+void printName(String name1, String name2, String name3) {
+  print('$name1 and $name2 and $name3 are friends');
+}
+```
+
+If you remove the third parameter then it will show error
+
+### <u>Optional Positional Parameter</u>
+
+To make a parameter optional we use [] But remember to use Null safety (?) in that case
+
+```
+void main() {
+  printName('Hulk', 'Ironman');
+}
+
+void printName(String name1, String name2, [String? name3]) {
+  print('$name1 and $name2 and $name3 are friends');
+}
+```
+
+Here it won't show error but $name3 will show null as a value
+
+### <u>Named Parameter</u>
+
+Suppose we have lot of parameters then it will be difficult to remember their position. We use {}
+to declare a named parameter.
+
+```
+void main() {
+  int volume = findVolume(2, breadth: 3, height: 10);
+  print(volume);
+}
+
+int findVolume(int length, {int? breadth, int? height}) {
+  return length * breadth * height;
+}
+```
+
+- Here the parameters becomes optional by default.
+  So we have to use Null Safety(?) within {}
+- In flutter every widget / element is using named parameter
+
+### <u>Default Parameter</u>
+
+If we don't specify a value then it shows null but we can hardcore a default value in case of named parameters only
+
+```
+void main() {
+  profile('Flutter);
+}
+
+void profile(String workshop, {String host = 'Guest User'}) {
+  print('$workshop is conducted by $host');;
+}
+```
+
+- We can pass Value and Override the default one
+- Here since we have already assigned a value so we
+  don't have to use Null Safety(?)

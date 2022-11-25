@@ -56,5 +56,5 @@ void main() {
   print('\n');
   int userAge2() => 17;
   int getUserAge2 = userAge2();
-  if (getUserAge2 < 18) 'User can\'t drive';
+  if (getUserAge2 < 18) print('User can\'t drive');
 }

@@ -326,3 +326,96 @@ void profile(String workshop, {String host = 'Guest User'}) {
 - We can pass Value and Override the default one
 - Here since we have already assigned a value so we
   don't have to use Null Safety(?)
+
+## 11. <u>What are Classes and Objects</u>
+
+**A class is a blueprint or featured common to all its objects**
+
+E.g. A student class. All students will have their id and name. All students perform functions like study and play. So we can make it a class. In class functions are called methods and variables and variables are called Properties.
+
+```
+void main() {}
+  class Student {
+    int id;
+    int name;
+
+    void study() {
+      print('Studying Sincerely');
+    }
+    void play() {
+
+    }
+  }
+```
+
+Note: class is logical representation doesn't store any memory until an object has been created
+
+### <u>What are Objects?</u>
+
+**An object is something that will assign value or access all variables and methods defined in a class**
+
+E.g. We had a Student class. But now if we want to enter a student detail then we have to make a instance of that class.
+
+```
+void main() {
+  var student = Student();
+  // new keyword is optional
+}
+
+var student1.id = 20;
+var student1.name = 'Alberto';
+print('${student.id} and ${student.name}');
+student1.study();
+```
+
+### <u>Constructors</u>
+
+Constructors are method / function within a class which will run before executing any other code irrespective of their position. As any other method has to be called. But even if we don't call a constructor, it will automatically get executed.
+
+- A Constructor is declared by writing the class name with ()
+- When we are instantiating a class then we are calling the default constructor
+- Constructors doesn't have a return type. They don't return Anything
+
+```
+void main() {
+  var student1 = Student();
+  student1.play();
+}
+
+class Student {
+  int id;
+  String name;
+
+  void play() {
+    print('I am playing');
+  }
+
+  // Constructor
+  Student() {
+    print('I am a Constructor');
+  }
+}
+```
+
+### <u>Parameterized Constructor</u>
+
+Same way we pass parameters in a function like that we can pass parameter to a constructor And then assign that value to a variable / property in that class.
+
+```
+main() {
+  var student1 = Student(35, 'Alberto');
+    print(student.id);
+}
+
+class Student {
+  int id;
+  String name;
+
+  Student(int ind, String name) {
+    this.id = id;
+    this.name = name;
+  }
+}
+```
+
+**NOTE** This way of sending data is used all the time in Flutter

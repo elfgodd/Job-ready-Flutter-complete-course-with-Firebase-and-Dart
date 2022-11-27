@@ -419,3 +419,91 @@ class Student {
 ```
 
 **NOTE** This way of sending data is used all the time in Flutter
+
+## 12. <u>GENERIC TYPE</u>
+
+Collections in Dart are heterogenous by default. That means collections like List, Map can contain values of various types. The concept of generics can be used to achieve to hold Strictly a certain data type only. It will Show error if you try to assign different value. It is declared using <datatype>
+
+```
+List<String> name = ['Vegeta', 'Goku', 'Gohan'];
+
+List<int> age = [20, 25, 30];
+
+Map<String, String> profile = {'name': 'Alberto', 'state': 'Guzman'}
+```
+
+**NOTE:** Generics can be used for anything such as class, function, object etc In Flutter we will see generic everywhere
+
+### <u>CONTROLLING ACCESSIBILITY</u>
+
+By default all variables and functions are public and accessible to the object we create. But we can make our variables and functions private by using underscore \_ before its name.
+
+```
+Class Student {
+  int _age = 25;
+}
+```
+
+### <u>INHERITANCE</u>
+
+Suppose we have two classes. Now what is common between the two.
+
+```
+Class Dog {
+  String color;
+  String breed;
+
+  void bark() {
+
+  }
+  void eat() {
+
+  }
+}
+```
+
+```
+Class Cat {
+  String color;
+  int age;
+
+  void meow() {
+
+  }
+
+  void eat() {
+  }
+}
+```
+
+In the previous two classes, the property Color and method Eat are common. So we can make a separate class and put those common characteristics. In our example, both are animals
+
+```
+Class Animal {
+  String color;
+
+  void eat() {}
+}
+```
+
+Now we can change our previous class and extend them to the class Animal by using extends keyword
+
+```
+Class Dog extends Animal {
+  String breed;
+
+  void bark() {}
+}
+```
+
+```
+Class Cat extends Animal {
+  int age;
+
+  void meow() {
+
+  }
+}
+```
+
+**Here Dog and Cat called child class and Animal is called super class or Parent Class**

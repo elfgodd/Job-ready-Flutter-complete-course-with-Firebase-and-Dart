@@ -507,3 +507,33 @@ Class Cat extends Animal {
 ```
 
 **Here Dog and Cat called child class and Animal is called super class or Parent Class**
+
+## 13. <u>Exception Handling using Try Catch</u>
+
+When a program ends abruptly or have an error. This Situation is known as an exception
+
+```
+void main() {
+  int year = 2021;
+  int zero = 0;
+
+  int result = year ~/ zero;
+  print(result);
+}
+```
+
+```
+void main() {
+  int year = 2021;
+  int zero = 0;
+
+  try {
+    int result = year ~/ zero;
+    print(result);
+  } catch(e) {
+    print('Handled Error: $e');
+  }
+}
+```
+
+Another example of error can be having a List and printing index which is not available in the List.

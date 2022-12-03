@@ -537,3 +537,7 @@ void main() {
 ```
 
 Another example of error can be having a List and printing index which is not available in the List.
+
+## 14. <u>Static variables and methods</u>
+
+## 15. <u>Ternary operator and Null safety</u>

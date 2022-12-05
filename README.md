@@ -24,4 +24,8 @@ Course Repository:
 
 ## Section 1: Introduction to Dart language
 
-### Folder 01:
+### Folder 01: 01-Intro-To-DartLang
+
+## Section 2: Introduction to Flutter Framework
+
+### Folder 01: 02-Intro-Flutter-Framework

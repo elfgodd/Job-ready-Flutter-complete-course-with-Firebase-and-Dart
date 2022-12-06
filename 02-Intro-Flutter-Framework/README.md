@@ -18,3 +18,10 @@ flutter create
 - **Pubspec.yaml**: this file defines the version and build number of your app. it's also where you define your dependencies. And assets directory.
 
 Note that I've skipped on other folders and files because most of the time you won't really need to touch them.
+
+## 1. <u>What are Widgets</u>
+
+Everything within a Flutter application is a **Widget**, from a simple "Text" to "Buttons" to "Screen Layouts". in Web development we know navbar, text field, div, tables. In flutter all these are called Widgets. That's it.
+
+Every widget will have properties or you can say arguments which we have to pass.
+And that property will most of the time accept a widget as its value. Every widget starts with its name followed by ()

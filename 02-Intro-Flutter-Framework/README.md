@@ -25,3 +25,8 @@ Everything within a Flutter application is a **Widget**, from a simple "Text" to
 
 Every widget will have properties or you can say arguments which we have to pass.
 And that property will most of the time accept a widget as its value. Every widget starts with its name followed by ()
+
+## 2. <u>Working with Assets & Pubspec file</u>
+
+The official package repository for Dart and Flutter apps.  
+https://pub.dev/

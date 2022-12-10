@@ -43,7 +43,7 @@ void main() => runApp(
 
 **NOTE**: Here home accepts Scaffold widget as its value. appBar and body are the property of Scaffold. AppBar has title as its property which accepts TEXT Widget.
 
-## 1. <u>Center & Floating Action Button</u>
+## 2. <u>Center & Floating Action Button</u>
 
 ### <u>#3 Center Widget</u>
 
@@ -79,3 +79,43 @@ home: Scaffold(
 **NOTE**: Every Widget has capital letter of first word  
 Every Property is accepting another widget as it's value  
 Child Property is common most of the time
+
+## 3. <u>Changing Color and Styling</u>
+
+To change color of the appBar we have the property backgroundColor The value of color is written using the keyword Colors, and followed by the name of the color
+
+```
+appBar: AppBar(
+  title: Text('Programeek'),
+  centerTitle: true,
+  backgroundColor: Colors.amber,
+),
+```
+
+Similarly to change color of floatingActionButton
+
+```
+floatingActionButton: FloatingActionButton(
+  child: Text('Add'),
+  backgroundColor: Colors.red,
+),
+```
+
+### <u>#5 Styling Text Widget</u>
+
+To change the color or give styling to a Text, We have to give a property of style to the Text Widget  
+A text Widget also accepts different arguments / property. The first property is positional where we mention The actual text and other property are named arguments such as style.  
+Now style property will accept another widget as its value which is the TextStyle Widget. And inside TextStyle we can mention color, fontsize, fontweight etc etc
+
+```
+Center(
+  child: Text(
+    'My First Flutter Application',
+    style: TextStyle(
+      color: Colors.cyan,
+      fontWeight: FontWeight.bold,
+      fontSize: 30.0
+    ),
+  )
+),
+```

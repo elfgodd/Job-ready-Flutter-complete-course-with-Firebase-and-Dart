@@ -10,7 +10,13 @@ void main() {
         title: Text('Flutter Rocks'),
         centerTitle: true,
       ),
-      body: Text('My First Flutter Application'),
+      body: Center(child: Text('My First Flutter Application')),
+      floatingActionButton: FloatingActionButton(
+        child: Text('Add'),
+        onPressed: () {
+          print('Hello');
+        },
+      ),
     ),
   ));
 }

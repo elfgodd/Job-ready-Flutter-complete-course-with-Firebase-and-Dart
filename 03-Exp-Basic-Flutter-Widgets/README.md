@@ -119,3 +119,71 @@ Center(
   )
 ),
 ```
+
+## 4. <u>What are Stateless Widget</u>
+
+### <u>STATELESS WIDGET</u>
+
+Till now we were writing code in our main function. But this is not the case when we build a real application. We have to separate our code into smaller pieces and use them wherever required. We can create our own widget which will contain all the other widgets in it.
+
+TYPES OF CUSTOM BUILT WIDGET: STATELESS and STATEFUL Widget  
+We can create a Stateless widget by extending our class from StatelessWidget and a bare minimum implementation shall look like
+
+```
+class AnyName extends StatelessWidget {
+  @override
+  // return type
+  Widget build(BuildContext context) {
+    return Container(
+
+    );
+  }
+}
+```
+
+Just Simply remember Data within a stateless widget cannot be changed after its being rendered. Suppose we want that after a button is clicked the color of the text should be changed. This is not possible in Stateless Widget
+
+**Here AnyName is a StatelessWidget and it has to override the function called build() which returns a widget.**
+
+### <u>Implemeting Stateless Widget</u>
+
+```
+void main() => runApp(
+  MaterialApp(
+    title:'My First App',
+    // Calling the Home Widget
+    home: MyHome(),
+  )
+);
+```
+
+**NOTE**: HOT RELOAD WILL NOW WORK
+
+```
+class MyHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+      title: Text('Programeek'),
+      centerTitle: true,
+      backgroundColor: Colors.amber,
+    ),
+    body: Center(
+      child: Text(
+        'My First Flutter Application',
+        style: TextStyle(
+          color: Colors.cyan,
+          fontWeight: FontWeight.bold,
+          fontSize: 30.0
+        ),
+      )
+    ),
+    floatingActionButton: FloatingActionButton(
+      child: Text('Add'),
+      backgroundColor: Colors.red,
+    ),
+    );
+  }
+}
+```

@@ -187,3 +187,54 @@ class MyHome extends StatelessWidget {
   }
 }
 ```
+
+## 5. <u>Asset and Network Image</u>
+
+### <u>Images</u>
+
+Until now we were just displaying text but a real application contains Images as well
+
+**Types of Images: Network Image and Asset Image**  
+**Network Image means any image from internet.**  
+**Copy url address of image and paste it inside image.network**
+
+```
+body: Center(
+  child: Image.network(
+    'https://codemate.com/content/logo.png'
+  )
+),
+```
+
+**_NOTE_**: We remove Text Widget because we cannot pass two Widgets directly in a child
+
+### <u>Setup Asset Image(local)</u>
+
+To insert an image which is present in your system.
+
+- Make a folder images in root directory and paste the image inside it
+- Go to Pubspec.yaml file and uncomment the asset section
+- MAKE SURE OF INDENTATION OR ELSE IT WILL SHOW ERROR
+- Write your image directory location with or without the image name
+
+### <u>INSERTING ASSET IMAGE</u>
+
+**SYNTAX: Image.asset(Image exact location with extension)**
+
+```
+body: Center(
+  child: Image.asset('images/goku.jpg'),
+),
+```
+
+**To change properties such as height, weight etc of the image**
+
+```
+body: Center(
+  child: Image.asset('images/goku.jpg',
+          width: 100.0,
+          height: 100.0,
+          color: Colors.black,
+  ),
+),
+```

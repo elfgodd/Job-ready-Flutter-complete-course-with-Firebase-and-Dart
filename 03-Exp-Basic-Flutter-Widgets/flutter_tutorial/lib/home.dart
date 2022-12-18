@@ -12,7 +12,18 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
         // child: Icon(Icons.access_alarm, color: Colors.orange, size: 200),
-        child: textButton(child: Text('')),
+        child: ElevatedButton(
+          child: Text('Click me'),
+          onPressed: () {
+            print('Hello');
+          },
+          style: ElevatedButton.styleFrom(
+              primary: Colors.orange,
+              elevation: 5,
+              padding: EdgeInsets.all(20),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(20)))),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         // child: Text('Add'),
@@ -43,3 +54,14 @@ class HomeScreen extends StatelessWidget {
 
 
 // body: Center(child: Image.asset('assets/images/goku.jpg', height: 300)),
+
+
+// child: TextButton(
+//             child: Text('Click me'),
+//             onPressed: () {},
+//             style: TextButton.styleFrom(
+//               primary: Colors.orange,
+//               padding: EdgeInsets.all(10),
+//               backgroundColor: Colors.black,
+//             )),
+

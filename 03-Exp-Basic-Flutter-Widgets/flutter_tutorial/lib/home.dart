@@ -11,19 +11,14 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.amber,
       ),
       body: Center(
-        // child: Icon(Icons.access_alarm, color: Colors.orange, size: 200),
-        child: ElevatedButton(
-          child: Text('Click me'),
-          onPressed: () {
-            print('Hello');
-          },
-          style: ElevatedButton.styleFrom(
-              primary: Colors.orange,
-              elevation: 5,
-              padding: EdgeInsets.all(20),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20)))),
-        ),
+        child: IconButton(
+            onPressed: () {
+              print('Icon Button');
+            },
+            icon: Icon(Icons.add_a_photo),
+            color: Colors.blueAccent,
+            iconSize: 100,
+            splashColor: Colors.red),
       ),
       floatingActionButton: FloatingActionButton(
         // child: Text('Add'),
@@ -65,3 +60,18 @@ class HomeScreen extends StatelessWidget {
 //               backgroundColor: Colors.black,
 //             )),
 
+// body: Center(
+//         // child: Icon(Icons.access_alarm, color: Colors.orange, size: 200),
+//         child: ElevatedButton(
+//           child: Text('Click me'),
+//           onPressed: () {
+//             print('Hello');
+//           },
+//           style: ElevatedButton.styleFrom(
+//               primary: Colors.orange,
+//               elevation: 5,
+//               padding: EdgeInsets.all(20),
+//               shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.all(Radius.circular(20)))),
+//         ),
+//       ),

@@ -238,3 +238,99 @@ body: Center(
   ),
 ),
 ```
+
+## 6. <u>Icon Widget</u>
+
+Flutter comes loaded with tons of icons which can be used to make our app more beautiful  
+**SYNTAX: ICON(ICONS.anyIconName)**
+
+```
+body: Center(
+  child: Icon(Icons.access_alarms)
+),
+```
+
+To change its color and size. Icon widget accept other properties.
+
+```
+body: Center(
+  child: Icon(Icons.access_alarms,
+    color: Colors.orange,
+    size: 200.0,
+  )
+),
+```
+
+### <u>Button Widget</u>
+
+TYPES OF BUTTONS: TEXT BUTTON, ELEVATED BUTTON and ICON BUTTON
+
+**TEXT BUTTON** (No elevation or 3d effect)  
+Syntax: TextButton(child: , onPressed:)
+
+```
+body: Center(
+  child: TextButton(
+    child: Text('Click me'),
+    onPressed: (){},
+  )
+),
+```
+
+```
+// STYLING THE BUTTON
+  TextButton(
+    child: Text('Click me',
+    style: TextStyle(color: Colors.white),
+    ),
+    onPressed: () {},
+    style: ElevatedButton.styleFrom(
+      primary: Colors.red,
+      shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(10)),
+      ),
+      padding: EdgeInsets.all(20),
+    ),
+  ),
+```
+
+**NOTE**: onPressed accepts a function. It determines what should happen after it is clicked
+
+### <u>ELEVATED BUTTON</u>
+
+**ELEVATED BUTTON** (With elevation or 3d effect)  
+Syntax: ElevatedButton(child: ,onPressed: )
+
+```
+body: Center(
+  child: ElevatedButton(
+    child: Text('Click me'),
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        primary: Colors.red,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10),
+          )
+        ),
+        padding: EdgeInsets.all(20),
+        elevation: 2
+      ),
+  ),
+),
+```
+
+### <u>ICON BUTTON</u>
+
+**Syntax: IconButton(icon: , onPressed: )**
+
+```
+body: Center(
+  child: IconButton(
+    icon: Icon(Icons.add_a_photo),
+    onPressed: (){print('Hello icon');},
+    color: Colors.blueAccent,
+    splashColor: Colors.black,
+    iconSize: 100.0,
+  )
+),
+```

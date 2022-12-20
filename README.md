@@ -28,4 +28,12 @@ Course Repository:
 
 ## Section 2: Introduction to Flutter Framework
 
-### Folder 01: 02-Intro-Flutter-Framework
+### Folder 02: 02-Intro-Flutter-Framework
+
+## Section 3: Exploring basic Flutter Widgets
+
+### Folder 03: 03-Exp-Basic-Flutter-Widgets
+
+## Section 4: Understanding Stateful Widget
+
+### Folder 04: 04-Understanding-Stateful-Widget

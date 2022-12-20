@@ -11,18 +11,21 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.amber,
       ),
       body: Container(
-          // color: Colors.red,
-          child: Text('Flutter is Awesome'),
-          padding: EdgeInsets.all(20),
-          margin: EdgeInsets.all(20),
-          width:
-              250, // container width, with no width only takes the minimum space
-          height: 80,
-          // alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: Colors.red,
-            shape: BoxShape.circle,
-          )),
+        margin: EdgeInsets.all(20),
+        child: TextField(
+          decoration: InputDecoration(
+            labelText: 'Name',
+            hintText: 'Enter fullname please',
+            prefixIcon: Icon(Icons.person),
+            border: OutlineInputBorder(),
+            // border: InputBorder.none // this will remove the border input
+          ),
+          maxLength: 10,
+          onChanged: (value) {
+            print(value);
+          },
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         // child: Text('Add'),
         child: Icon(Icons.message),
@@ -92,3 +95,18 @@ class HomeScreen extends StatelessWidget {
 //             iconSize: 100,
 //             splashColor: Colors.red),
 //       ),
+
+
+// Container(
+//           // color: Colors.red,
+//           child: Text('Flutter is Awesome'),
+//           padding: EdgeInsets.all(20),
+//           margin: EdgeInsets.all(20),
+//           width:
+//               250, // container width, with no width only takes the minimum space
+//           height: 80,
+//           // alignment: Alignment.center,
+//           decoration: BoxDecoration(
+//             color: Colors.red,
+//             shape: BoxShape.circle,
+//           )),

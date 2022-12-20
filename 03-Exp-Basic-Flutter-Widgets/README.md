@@ -426,3 +426,27 @@ body: Row(
 ```
 
 **NOTE**: We can use row inside column as a widget and vice versa
+
+## 10. <u>ListTile and ListView</u>
+
+### <u>ListTile</u>
+
+A single row that typically contains some text as well as a leading or trailing icon
+
+`Syntax: ListTile(leading: ,title: ,subtitle: ,onTap ,)`
+
+```
+body: ListTile(
+  leading: Icon(Icons.account_circle),
+    color: Colors.blue,
+    size: 40,
+    ),
+  title: Text('Alberto'),
+  subtitle: Text('Lets learn flutter together this sunday'),
+  onTap: () {
+    print('You tapped listTile'),
+  },
+)
+```
+
+**NOTE**: We can wrap ListTile inside Card Widget to get a 3d look This ListTile can be seen in our WHatsApp Design

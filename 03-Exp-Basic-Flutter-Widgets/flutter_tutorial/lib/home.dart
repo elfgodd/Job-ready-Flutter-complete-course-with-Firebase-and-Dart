@@ -10,15 +10,22 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.amber,
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        // mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: crossAxisAlignment.center,
-        children: [
-          Text('Hi, I am learning Flutter'),
-          ElevatedButton(onPressed: () {}, child: Text('Submit')),
-          Image.asset('assets/images/goku.jpg', height: 100, width: 100)
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          // ListView is Scrollable and it prints the widgets vertical by default
+          children: [
+            ListTile(
+                title: Text('Alberto Guzman'),
+                subtitle: Text('Going to the moon'),
+                leading:
+                    Icon(Icons.account_circle, color: Colors.blue, size: 30),
+                trailing: IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.delete),
+                ),
+                onTap: () => print('Alberto Guzman')),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         // child: Text('Add'),
@@ -120,5 +127,48 @@ class HomeScreen extends StatelessWidget {
 //           Text('Hi, I am learning Flutter'),
 //           ElevatedButton(onPressed: () {}, child: Text('Submit')),
 //           Image.asset('assets/images/goku.jpg', height: 100, width: 100)
+//         ],
+//       ),
+
+
+// Row(
+//         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//         // mainAxisAlignment: MainAxisAlignment.center,
+//         // crossAxisAlignment: crossAxisAlignment.center,
+//         children: [
+//           Text('Hi, I am learning Flutter'),
+//           ElevatedButton(onPressed: () {}, child: Text('Submit')),
+//           Image.asset('assets/images/goku.jpg', height: 100, width: 100)
+//         ],
+//       ),
+
+
+// Column(
+//         children: [
+//           ListTile(
+//               title: Text('Alberto Guzman'),
+//               subtitle: Text('Going to the moon'),
+//               leading: Icon(Icons.account_circle, color: Colors.blue, size: 30),
+//               trailing: IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(Icons.delete),
+//               ),
+//               onTap: () => print('Alberto Guzman')),
+//         ],
+//       ),
+
+
+// ListView(
+//         // ListView is Scrollable and it prints the widgets vertical by default
+//         children: [
+//           ListTile(
+//               title: Text('Alberto Guzman'),
+//               subtitle: Text('Going to the moon'),
+//               leading: Icon(Icons.account_circle, color: Colors.blue, size: 30),
+//               trailing: IconButton(
+//                 onPressed: () {},
+//                 icon: Icon(Icons.delete),
+//               ),
+//               onTap: () => print('Alberto Guzman')),
 //         ],
 //       ),

@@ -334,3 +334,95 @@ body: Center(
   )
 ),
 ```
+
+## 7. <u>Container Widget</u>
+
+It just wrap around another widget. If you are familiar with the concept of **DIV** in web development, then it works same as that, We use it so that we can give margin, padding, alignment, width and other properties to the element inside it.
+
+**SYNTAX**: Container(child:)
+
+```
+body: Container(
+  color: Colors.red,
+  child: Text('Hello Flutter'),
+  margin: EdgeInsets.only(top: 30),
+  padding: EdgeInsets.all(50),
+),
+// EdgeInsets.only, all, FromLTRP
+```
+
+Margin is space outside, Padding is space inside
+
+## 8. <u>Text Field</u>
+
+A text field lets the user enter text, either with hardware keyboard
+or with an onscreen keyboard.
+
+**SYNTAX**: TextField(decoration: InputDecoration(), onChanged: (value){}, )
+
+```
+body: TextField(
+  maxLength: 30,
+  decoration: InputDecoration(
+    labelText: 'Username',
+    prefixIcon: Icon(Icons.add_a_photo),
+    border: OutlineInputBorder()
+    // If you want border
+  ),
+  onChanged: (value) {
+    print(value),
+  },
+),
+```
+
+**NOTE**: There are more property in TextField() and InputDecoration()
+
+## 9. <u>Column and Row</u>
+
+### <u>Column Widget</u>
+
+Till now we were just outputting one widget or element at a time. But this is not happening in real application. A screen contains multiple widgets like
+image, Text, button all Together.  
+**A Column helps to output widgets in vertical direction i.e. top to bottom**  
+`Syntax: Column(children: <Widget>[ ],)`
+
+```
+body: Column(
+  children: <Widget>[
+    Text('Hi this is Alberto'),
+    RaisedButton(
+      child: Text('Chat'),
+      onPressed: () {},
+    ),
+    Image.asset('images/hummingbird.png',
+    width: 100,
+    height: 100,
+    )
+  ],
+),
+```
+
+**NOTE**: Children is used instead of child Each Widget is separated by comma
+
+### <u>Row Widget</u>
+
+**Same as Column, Row helps to output multiple widgets. BUT A Row helps to output widgets in horizontal direction i.e. left to right**
+`Syntax: Row(children:<Widget>[ ],)`
+
+```
+body: Row(
+  children: <Widget>[
+    Text('Hi this is Alberto'),
+    RaisedButton(
+      child: Text('Chat'),
+      onPressed: () {},
+    ),
+    Image.asset('images/hummingbird.png',
+    width: 100,
+    height: 100,
+    )
+  ],
+),
+```
+
+**NOTE**: We can use row inside column as a widget and vice versa

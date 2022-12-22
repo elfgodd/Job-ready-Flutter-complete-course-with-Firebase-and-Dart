@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MyStatefulScreen extends StatefulWidget {
-  const MyStatefulScreen({super.key});
+  String userName;
+
+  MyStatefulScreen({super.key, this.userName = 'Alberto Guzman'});
 
   @override
   State<MyStatefulScreen> createState() => _MyStatefulScreenState();
@@ -12,11 +14,21 @@ class _MyStatefulScreenState extends State<MyStatefulScreen> {
   int i = 0;
   Color color = Colors.red;
 
+  String? name;
+
+  @override
+  void initState() {
+    super.initState();
+    print('INIT STATE');
+    this.name = widget.userName;
+  }
+
   @override
   Widget build(BuildContext context) {
+    print('Build Function');
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stateful Widget'),
+        title: Text('Stateful Widget - $name'),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.color_lens),

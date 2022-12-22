@@ -24,6 +24,35 @@ class _MyStatefulScreenState extends State<MyStatefulScreen> {
   }
 
   @override
+  void didChangeDependencies() {
+    print('DidChangeDependencies');
+    super.didChangeDependencies();
+  }
+
+  @override
+  void didUpdateWidget(covariant MyStatefulScreen oldWidget) {
+    // TODO: implement didUpdateWidget
+    if (this.widget.userName != oldWidget.userName) {
+      print('DIDUPDATECHANGE');
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void deactivate() {
+    // TODO: implement deactivate
+    print('Deactive');
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    print('DISPOSE');
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     print('Build Function');
     return Scaffold(

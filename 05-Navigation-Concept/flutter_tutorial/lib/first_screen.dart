@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/second_screen.dart';
+import 'package:flutter_tutorial/third_screen.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
+
+  static String id = '/first_Screen';
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +16,14 @@ class FirstScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SecondScreen()));
+              // Push method
+              //   Navigator.push(context,
+              //       MaterialPageRoute(builder: (context) => SecondScreen()));
+              // Navigator.pushNamed(context, '/second_screen');
+              Navigator.pushNamed(context, ThirdScreen.id);
+              // Navigator.pushReplacementNamed(context, '/second_screen');
 
-              // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SecondScreen()));
+              // Navigator.pushReplacementNamed(context, MaterialPageRoute(builder: (context) => SecondScreen()));
             },
             child: Text('Go to Second Screen')),
       ),

@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/first_screen.dart';
 
-import './first_screen.dart';
+class ThirdScreen extends StatelessWidget {
+  const ThirdScreen({super.key});
 
-class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
-
-  static String id = '/second_screen';
+  static String id = '/third_screen';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Screen'),
+        title: Text('Third Screen'),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            // Pop
-            // Go Back to previous page
-            // Navigator.pop(context);
-
-            // Go to different page
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => FirstScreen()));
           },

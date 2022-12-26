@@ -15,9 +15,9 @@ void main() {
       '/': (context) => FirstScreen(),
       // '/second_screen': (context) => SecondScreen(),
       // Cleaner routes
-      ThirdScreen.id: (context) => ThirdScreen(),
       FirstScreen.id: (context) => FirstScreen(),
-      SecondScreen.id: (context) => SecondScreen(),
+      // SecondScreen.id: (context) => SecondScreen(),
+      ThirdScreen.id: (context) => ThirdScreen(),
     },
   ));
 }

@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import './first_screen.dart';
 
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
-
+  String name;
   static String id = '/second_screen';
+  // const SecondScreen({super.key});
+  // SecondScreen(this.name);
+  SecondScreen({required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +18,21 @@ class SecondScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
+            print(name);
+
             // Pop
             // Go Back to previous page
             // Navigator.pop(context);
 
             // Go to different page
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => FirstScreen()));
+            // Navigator.push(context,
+            //     MaterialPageRoute(builder: (context) => FirstScreen()));
+
+            // Navigator.pushReplacement(context,
+            //     MaterialPageRoute(builder: (context) => FirstScreen()));
           },
-          child: Text('Go Back'),
+          // child: Text('Go Back'),
+          child: Text('Print'),
         ),
       ),
     );

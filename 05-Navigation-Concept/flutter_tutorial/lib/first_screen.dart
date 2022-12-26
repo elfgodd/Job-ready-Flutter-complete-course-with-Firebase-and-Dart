@@ -17,10 +17,15 @@ class FirstScreen extends StatelessWidget {
         child: ElevatedButton(
             onPressed: () {
               // Push method
-              //   Navigator.push(context,
-              //       MaterialPageRoute(builder: (context) => SecondScreen()));
+              Navigator.push(
+                  context,
+                  // MaterialPageRoute(
+                  //     builder: (context) => SecondScreen('Alberto Guzman')));
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          SecondScreen(name: 'Alberto Guzman')));
               // Navigator.pushNamed(context, '/second_screen');
-              Navigator.pushNamed(context, ThirdScreen.id);
+              // Navigator.pushNamed(context, ThirdScreen.id);
               // Navigator.pushReplacementNamed(context, '/second_screen');
 
               // Navigator.pushReplacementNamed(context, MaterialPageRoute(builder: (context) => SecondScreen()));

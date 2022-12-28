@@ -244,3 +244,21 @@ ElevatedButton(onPressend: () {
   Navigator.pop(context, true);
 }, child: Text('Go back with value')),
 ```
+
+## 5. <u>DRAWER (Side Navigation)</u>
+
+In apps that use Material Design, there are two primary options for navigation:
+tabs and drawers. When there is insufficient space to support tabs, drawers provide
+a handy alternative. We can use a drawer only inside a scaffold widget.
+
+```
+Scaffold(drawer: Drawer(
+  child: ListView()
+))
+```
+
+**Note**:
+- We can use Column also but ListView is more recommended.
+While using column we encounter few alignment issues
+
+- Inside ListView we can use DrawerHeader, ListTile, UserAccountsDrawerHeader

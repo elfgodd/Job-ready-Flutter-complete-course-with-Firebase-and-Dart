@@ -10,6 +10,32 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+          child: ListView(
+        children: [
+          UserAccountsDrawerHeader(
+            accountName: Text('Alberto Guzman'),
+            accountEmail: Text('alberto@orbitbase.io'),
+            currentAccountPicture: CircleAvatar(child: Icon(Icons.android)),
+          ),
+          ListTile(
+              title: Text('Second Screen'),
+              leading: Icon(Icons.home),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SecondScreen()));
+              }),
+          ListTile(
+              title: Text('Contact Us'),
+              leading: Icon(Icons.send),
+              onTap: () {}),
+          ListTile(
+              title: Text('Second Screen'),
+              leading: Icon(Icons.call),
+              onTap: () {}),
+        ],
+      )),
       appBar: AppBar(
         title: Text('First Screen'),
       ),

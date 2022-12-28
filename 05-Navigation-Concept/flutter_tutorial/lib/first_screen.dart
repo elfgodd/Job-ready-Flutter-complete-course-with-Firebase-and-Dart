@@ -15,15 +15,20 @@ class FirstScreen extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
+              // Navigator.pushNamed(context, SecondScreen.id, arguments: {
+              //   'name': 'Alberto Guzman',
+              //   'founder': '@OrbitBaseIO'
+              // });
+
               // Push method
-              Navigator.push(
-                  context,
-                  // MaterialPageRoute(
-                  //     builder: (context) => SecondScreen('Alberto Guzman')));
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          SecondScreen(name: 'Alberto Guzman')));
+              bool status = await Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SecondScreen()));
+              print(status);
+
+              // MaterialPageRoute(
+              //     builder: (context) =>
+              //         SecondScreen(name: 'Alberto Guzman')));
               // Navigator.pushNamed(context, '/second_screen');
               // Navigator.pushNamed(context, ThirdScreen.id);
               // Navigator.pushReplacementNamed(context, '/second_screen');

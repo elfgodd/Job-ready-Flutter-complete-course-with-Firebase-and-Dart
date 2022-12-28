@@ -3,14 +3,17 @@ import 'package:flutter/material.dart';
 import './first_screen.dart';
 
 class SecondScreen extends StatelessWidget {
-  String name;
+  // String name;
   static String id = '/second_screen';
   // const SecondScreen({super.key});
   // SecondScreen(this.name);
-  SecondScreen({required this.name});
+  // SecondScreen({required this.name});
 
   @override
   Widget build(BuildContext context) {
+    // Retrieve the data from first screen
+    //
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Second Screen'),
@@ -18,7 +21,9 @@ class SecondScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            print(name);
+            // print(name);
+
+            Navigator.pop(context, true);
 
             // Pop
             // Go Back to previous page
@@ -32,7 +37,8 @@ class SecondScreen extends StatelessWidget {
             //     MaterialPageRoute(builder: (context) => FirstScreen()));
           },
           // child: Text('Go Back'),
-          child: Text('Print'),
+          // child: Text('Print'),
+          child: Text('Go back with value'),
         ),
       ),
     );

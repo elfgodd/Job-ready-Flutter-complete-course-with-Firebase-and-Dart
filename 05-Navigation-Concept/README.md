@@ -149,3 +149,98 @@ onPressed: () {
   Navigator.pushNamed(context, Second.id);
 },
 ```
+
+## 4. <u>Passing data via Constructors</u>
+
+### <u>Passing Data through Constructor</u>
+
+In dart, there are two types of Constructors - \*\* Parameterised Constructor
+and Named Constructor  
+To accept data, first we have to create instance variables in the screen we are navigating to, and create a constructor to assign the data to the variable
+
+```
+// (Contact Us Page)
+class ContactUs extends StatelessWidget {
+  final String name;
+  ContactUs(this.name); // Constructor
+  @override
+  Widget build(BuildContext context) {
+    // ............
+    body: Column(
+      children: [
+      Text('Welcome $name'),
+      ElevatedButton(
+        child: Text('Go Back'),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+    ],),
+  },
+);}}
+```
+
+```
+// (Home Page)
+class Home extends StatelessWidget {
+  // ............
+  body: Center(
+    child: RaisedButton(
+      child: Text('Contact Us'),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context)=>ContactUs('Alberto')),
+        );
+      },
+    ),
+  ),
+};}}
+```
+
+### <u>Passing data to a Named route</u>
+
+Similarly while using Named route like Navigator.pushNamed, we can also
+send parameters while navigating. We simply add the argument to a Map while pushing. Here i have send String as the value to the key, You can
+also send custom modals and objects
+
+```
+Navigator.pushNamed(context, Contact.id, arguments: {
+  'name': 'Flutter is awesome'
+});
+```
+
+And to retrieve the data in the next screen:
+
+```
+@override
+Widget build(BuildContext context) {
+  if(ModalRoute.of(context)!.settings.arguemtns != null) {
+    final Map arguments = ModalRoute.of(context)!.settings.arguments as Map;
+    print(arguments['name']);
+  }
+  return Scaffold(
+    // ..........
+}
+```
+
+### <u>Returning a value when going back</u>
+
+Sometimes we may need to return a value back to the previous screen, for that we need
+to modify the push() function in the first screen to **wait** for a value, using
+**await**, and pass the value in the pop() function of the second screen.
+
+```
+// First Screen
+bool value = await Navigator.push(context, MaterialPageRoute(
+  builder: (context) => SecondScreen()));
+  print(value);
+))
+```
+
+```
+// Second Screen
+ElevatedButton(onPressend: () {
+  Navigator.pop(context, true);
+}, child: Text('Go back with value')),
+```

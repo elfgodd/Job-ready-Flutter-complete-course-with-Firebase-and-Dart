@@ -258,7 +258,54 @@ Scaffold(drawer: Drawer(
 ```
 
 **Note**:
+
 - We can use Column also but ListView is more recommended.
-While using column we encounter few alignment issues
+  While using column we encounter few alignment issues
 
 - Inside ListView we can use DrawerHeader, ListTile, UserAccountsDrawerHeader
+
+## 5. <u>Bottom Navigation Bar</u>
+
+Bottom navigation bar is a cool widget which has been given by the flutter framework.
+We can easily add bottom navigation bar to the scaffold
+
+```
+Scaffold(
+  bottomNavigationBar: BottomNavigationBar(
+    currentIndex,
+    items: [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.icon_name),
+        title: Text(``),
+      ),
+    ],
+    onTap(index){}
+  )
+)
+```
+
+NOTE: There should be more than one BottomNavigationBarItem in order to make it
+work OnTap function return the index
+
+```
+Scaffold(
+  bottomNavigationBar: BottomNavigationBar(
+    currentIndex,
+    items: [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.icon_name),
+        title: Text(``),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.vpn_key),
+        title: Text('Login'),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.chat),
+        title: Text('Chats'),
+      )
+    ],
+    onTap(index){}
+  )
+)
+```

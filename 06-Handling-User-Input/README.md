@@ -34,3 +34,117 @@ TextField(
 `TextEditingController controllerName = TextEditingController();`
 
 `controllerName.text; // It will output the value`
+
+## 3. <u>Validating User Input</u>
+
+### <u>Form Widget</u>
+
+Involving a Form widget in your app simply makes it easier to validate, reset, and save multiple input fields at once.
+And we use the widget TextFormField inside Form instead of just TextField
+
+### <u>Create a Form</u>
+
+```
+body: Form(
+  child: Column(
+    mainAxisAligment: MainAxisAlignment.center,
+    children: [
+      Container(
+        margin: EdgeInSets.all(30),
+        child: TextFormField(
+          decoration: InputDecoration(
+            labelText: 'Name',
+            border: OutlineInputBorder()
+          ),
+          controller: nameController,
+        ),
+      ),
+      ElevatedButton(onPressed: () {
+        print(nameController.text);
+      }, child: Text('Print'))
+    ],
+  ),
+)
+```
+
+### <u>Form Validation</u>
+
+Validating forms is a common practice in all digital interactions.
+To validate a form in a flutter, we need to implement mainly three steps.
+
+**Step 1**: Use the Form widget with a global key.  
+**Step 2**: Use TextFormField to give the input field with validator property.  
+**Step 3**: Create a button to validate form fields and display validation erros.
+
+```
+class HomePage extends StatelessWidget {
+  TextEditingController nameController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  <!-- .......... -->
+
+  body: Form(
+    key: _formKey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: []
+  <!-- .......... -->
+        )
+  )
+}
+```
+
+Now we have to use **validator()** function in the TextFormField to validate the input properties. If
+the user gives the wrong input, the validator function returns a string that contains an **error message;**
+otherwisem the validator function return **null**.
+
+```
+child: TextFormField(
+  validator: (value) {
+    if(value.isEmpty) {
+      return 'Field is required'
+    }
+    return null;
+  },
+)
+
+```
+
+ElevatedButton(onPressed: () {
+if(\_formKey.currentState.validate()) {
+print('Form Submitted Successfully');
+}
+}, child: Text('Print'))
+
+```
+
+```
+
+### <u>Saving a Form</u>
+
+While building app, We probably want to save the form data to do something with that.
+In this step we will just create some saving rules for the fields and then when we call the
+onSaved() method, it will execute those rules.
+
+```
+child: TextFormField(
+  onSaved: (value) {
+    print('$value is Saved');
+  },
+  validator: (value) {
+    if(value.isEmpty) {
+        <!-- .......... -->
+    }
+  }
+)
+```
+
+```
+ElevatedButton(onPressed: () {
+  if(_formKey.currentState.validate()) {
+    _formKey.currentState.save();
+    print('Form Submitted Successfully');
+  }
+}, child: Text('Print))
+```
+
+Note: Here we have just print value in onSaved() but it can be used to assign the value to a variable, etc.

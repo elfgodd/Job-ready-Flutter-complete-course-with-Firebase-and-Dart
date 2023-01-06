@@ -185,3 +185,48 @@ decoration: InputDecoration(
   labelText: "Name",
 )
 ```
+
+- **Use "border" property to add/remove a border to the TextField**
+
+```
+decoration: InputDecoration(
+  border: OutlineInputBorder()
+),
+```
+
+```
+decoration: InputDecoration(
+  border: InputBorder.none
+),
+```
+
+- **Use "helperText" if you do not want a label but you want a persisting message for the user.**
+
+```
+decoration: InputDecoration(
+  helperText: "* minimum 5 characters",
+  border: OutlineInputBorder()
+),
+```
+
+### <u>Changing Keyboard Properties for TextFields</u>
+
+The types are:
+
+1. **TextInputType.text** (Normal complete keyboard)
+2. **TextInputType.number** (A numerical keyboard)
+3. **TextInputType.emailAddress** (Normal keyboard with an "@")
+4. **TextInputType.datetime** (Numerical keyboard with a "/" and ":")
+5. **TextInputType.multiline** (Optimises for multi-line information)
+
+(Example: keyboardType: TextInputType.number)
+
+### <u>Obscuring Text</u>
+
+To hide text in a TextField, set obscureText to true, We use it mostly in password field.
+`TextField(obscureText: true,),`
+
+### <u>Controlling max characters</u>
+
+TextFields can control the maximum number of characters written inside it.
+`TextField(maxLength: 5,),`

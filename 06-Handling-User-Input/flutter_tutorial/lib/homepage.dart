@@ -39,8 +39,24 @@ class _HomePageState extends State<HomePage> {
                   decoration: InputDecoration(
                     labelText: 'Name',
                     hintText: 'Write your full name',
+                    // icon: Icon(Icons.person),
+
+                    // This places the Icon inside the border
+                    prefixIcon: Icon(Icons.person),
+                    // border: InputBorder.none
+                    border: OutlineInputBorder(),
+
+                    // This places the Icon on the right side at the end
+                    // suffixIcon: Icon(Icons.person),
+
                     // border: OutlineInputBorder(),
                   ),
+                  // This only works on Mobile Emulators
+                  keyboardType: TextInputType.number,
+                  maxLength: 10,
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 TextFormField(
                   validator: (value) {
@@ -56,7 +72,9 @@ class _HomePageState extends State<HomePage> {
                   decoration: InputDecoration(
                     labelText: 'Password',
                     border: OutlineInputBorder(),
+                    helperText: "Password > 3 characters",
                   ),
+                  obscureText: true,
                 ),
                 ElevatedButton(
                   onPressed: () {

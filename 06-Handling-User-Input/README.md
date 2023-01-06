@@ -148,3 +148,40 @@ ElevatedButton(onPressed: () {
 ```
 
 Note: Here we have just print value in onSaved() but it can be used to assign the value to a variable, etc.
+
+## 3. <u>Decoration and other properties</u>
+
+Till now we have learn how to use features of TextField but now we will make it look good as well.
+For decorating the TextField, we use the **decoration** property which takes an InputDecoration.
+
+- **Use the hint label properties to give information to the user**
+
+```
+decoration: InputDecoration(
+  labelText: "Name",
+  hintText: "Write you Full Name",
+)
+```
+
+- **You can add icons using "icon", "prefixIcon" and "suffixIcon"**
+
+```
+decoration: InputDecoration(
+  icon: Icon(Icons.email),
+  labelText: "Name",
+)
+```
+
+```
+decoration: InputDecoration(
+  prefixIcon: Icon(Icons.email),
+  labelText: "Name",
+)
+```
+
+```
+decoration: InputDecoration(
+  suffixIcon: Icon(Icons.email),
+  labelText: "Name",
+)
+```

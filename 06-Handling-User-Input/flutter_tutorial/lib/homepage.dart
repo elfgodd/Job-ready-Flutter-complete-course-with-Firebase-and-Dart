@@ -38,7 +38,8 @@ class _HomePageState extends State<HomePage> {
                   controller: nameController,
                   decoration: InputDecoration(
                     labelText: 'Name',
-                    border: OutlineInputBorder(),
+                    hintText: 'Write your full name',
+                    // border: OutlineInputBorder(),
                   ),
                 ),
                 TextFormField(

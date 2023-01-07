@@ -149,7 +149,7 @@ ElevatedButton(onPressed: () {
 
 Note: Here we have just print value in onSaved() but it can be used to assign the value to a variable, etc.
 
-## 3. <u>Decoration and other properties</u>
+## 4. <u>Decoration and other properties</u>
 
 Till now we have learn how to use features of TextField but now we will make it look good as well.
 For decorating the TextField, we use the **decoration** property which takes an InputDecoration.
@@ -230,3 +230,49 @@ To hide text in a TextField, set obscureText to true, We use it mostly in passwo
 
 TextFields can control the maximum number of characters written inside it.
 `TextField(maxLength: 5,),`
+
+## 5. <u>Alert Dialog Widget</u>
+
+### <u>Alert Dialog</u>
+
+An alert dialog is a useful feature that notifies the user with important information to make a decision
+or provide the ability to choose a specific action.
+
+Key Properties of Alert Dialog Box:
+
+- **actions**: The set of actions that are displayed at the bottom of the dialog. Typically Buttons.
+- **title**: The title of the dialog is displayed in a large font at the top of the dialog.
+- **content**: This gives a message/description about the title which you have provided to the Alert Dialog Box.
+- **backgrounColor**: It provides the background color to the widget which is being used in.
+- **elevation**: Elevation provided height to the widget, It gives a default shadow to the widget.
+
+To show an alert, you must have to call **showDialog()** function, which contains the context and
+**itemBuilder** function.
+
+```
+showDialog(context: context, builder: (context) => AlertDialog(
+  title: ,
+  content: ,
+))
+```
+
+### <u>Displaying Alert Dialog</u>
+
+```
+ElevatedButton(onPressed: () {
+  if(_formKey.currentState.validate()) {
+    _formKey.currentState.save();
+    showDialog(context: context, builder: (context) => AlertDialog(
+      title: Text('Thank you'),
+      content: Text('Form Submitted Successfully'),
+      actions: [
+        TextButton(onPressed: () {
+          Navigator.pop(context);
+        }, child: Text('Okay'))
+      ],
+    ));
+  }
+}, child: Text('Submit'))
+```
+
+**Note**: You can change backgroundColor, Shape, Padding etc properties as well.

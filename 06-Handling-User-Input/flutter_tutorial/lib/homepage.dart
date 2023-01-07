@@ -80,6 +80,22 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     if (_formKey.currentState!.validate() == true) {
                       _formKey.currentState!.save();
+                      showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                                title: Text('Thank you'),
+                                content: Text('Form Submitted Successfully'),
+                                actions: [
+                                  ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Okay'))
+                                ],
+                                backgroundColor: Colors.redAccent,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10)),
+                              ));
                       print('Form Submitted Successfully');
                     }
                   },
@@ -91,7 +107,6 @@ class _HomePageState extends State<HomePage> {
         ));
   }
 }
-
 
 /* import 'package:flutter/material.dart';
 

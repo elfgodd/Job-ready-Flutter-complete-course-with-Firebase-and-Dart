@@ -39,6 +39,83 @@ class _HomePageState extends State<HomePage> {
                   decoration: InputDecoration(
                     labelText: 'Name',
                     hintText: 'Write your full name',
+                    prefixIcon: Icon(Icons.person),
+                    border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.number,
+                  maxLength: 10,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  validator: (value) {
+                    if (value!.length < 3) {
+                      return 'Password should be more than 3 characters';
+                    }
+                    return null;
+                  },
+                  onSaved: (value) {
+                    print('Password Field is Saved');
+                  },
+                  controller: passwordController,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    border: OutlineInputBorder(),
+                    helperText: "Password > 3 characters",
+                  ),
+                  obscureText: true,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate() == true) {
+                      _formKey.currentState!.save();
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text('Form Submitted Suiccessfully'),
+                          backgroundColor: Colors.green,
+                          duration: Duration(seconds: 1),
+                          ));
+                      print('Form Submitted Successfully');
+                    }
+                  },
+                  child: Text('Submit'),
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+}
+
+
+/* @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Handler User Input'),
+          centerTitle: true,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextFormField(
+                  validator: (value) {
+                    if (value == '') {
+                      return 'Field is requred';
+                    }
+                    return null;
+                  },
+                  onSaved: (value) {
+                    print('Name Field is Saved');
+                  },
+                  controller: nameController,
+                  decoration: InputDecoration(
+                    labelText: 'Name',
+                    hintText: 'Write your full name',
                     // icon: Icon(Icons.person),
 
                     // This places the Icon inside the border
@@ -106,7 +183,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ));
   }
-}
+} */
 
 /* import 'package:flutter/material.dart';
 

@@ -276,3 +276,28 @@ ElevatedButton(onPressed: () {
 ```
 
 **Note**: You can change backgroundColor, Shape, Padding etc properties as well.
+
+## 6. <u>Displaying Snackbar</u>
+
+### <u>Snackbar</u>
+
+Snackbar is a widget used to display a short message. it's usually displayed at the bottom of the screen.
+It display the message for a very short period, and when the specified time completed, it will be
+disappeared from the screen.
+
+`Snackbar(content: ,)`
+Note: Here content accepts a Widget as value which is usually a Text Widget.
+
+**Displaying a SnackBar**: To display a snackbar, we use ScaffoldMessenger.of(context)
+
+```
+ElevatedButton(onPressed: () {
+  if(_formKey.currentState.validate()) {
+    _formKey.currentState.save();
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('Form Submitted Successfully')
+    ));
+  }
+}, child: Text('Submit'))
+```
+Note: You can change the background Color of the Snackbar as well.

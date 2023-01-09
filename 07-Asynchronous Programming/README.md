@@ -64,3 +64,20 @@ void getData() {
   print('Random line of code');
 }
 ```
+
+## 2. <u>Async Await Concept</u>
+Then/CatchError definitely works well, but there's also an alternative syntax that many find to be much reable
+and also to avoid multiple chain of then/catch. We use the **async** keyword after our function name and add the
+**await** keyword before anything that needs some time to run, like our get request. Now everything after it will
+be ran when a value has been
+
+```
+Future functionName() async {
+  final variableName = await Future.delayed(Duration(seconds: 2), () {
+    return 'value';
+  });
+  print(variableName);
+}
+```
+
+**Note**: For error handling we can just wrap the whole code into a try/catch block

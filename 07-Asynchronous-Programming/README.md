@@ -100,3 +100,47 @@ every few seconds
 3. Listening to a Stream
 4. Closing a Stream
 
+## 4. <u>FutureBuilder and StreamBuilder Widget</u>
+
+FutureBuilder **removes** some of the codes which we have to write when we are fetching something from network.  
+Lets say you want to fetch data from database on launch of app and show a loader spinner till
+data comes. In that case futurebuilder comes handy.  
+- FutureBuilder takes two important paremeters: Futures and builder
+- builder takes a function which has two parameters: context is by default and
+snapshot is just a variable which contains the data returned by the future function
+
+```
+FutureBuilder(
+  future: ,
+  builder: (context, snapshot) {
+
+  }
+),
+```
+
+```
+body: Center(
+  child: FutureBuilder(
+    future: getData(),
+    builder: (context, snapshot) {
+      if(snapshot.connectionState == ConnectionState.waiting) {
+        return CircularProgressIndicator();
+      } else {
+        return Text(snapshot.data);
+      }
+    },
+  ),
+),
+```
+
+```
+Future getData() async {
+  // Simulate Network request to get the username
+  final String user = await Future.delayed(Duration(seconds: 3), () {
+    return 'Hello Guest';
+  });
+  return user;
+  }
+  @override
+  ....................
+```

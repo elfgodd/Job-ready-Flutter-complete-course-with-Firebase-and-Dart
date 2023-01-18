@@ -22,26 +22,38 @@ class StreamScreen extends StatelessWidget {
     }
   }
 
+  Stream myStream() async* {
+    for (var i = 0; i < 10; i++) {
+      yield i;
+      await Future.delayed(Duration(seconds: 2));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        child: Text('Add'),
-        onPressed: () {
-          streamController.add('You have a new notification');
-        },
-      ),
-      appBar: AppBar(
-        title: Text('Stream Tutorial'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-            onPressed: () {
-              streamData();
-            },
-            child: Text('Click to open Stream')),
-      ),
-    );
+        floatingActionButton: FloatingActionButton(
+          child: Text('Add'),
+          onPressed: () {
+            streamController.add('You have a new notification');
+          },
+        ),
+        appBar: AppBar(
+          title: Text('Stream Tutorial'),
+        ),
+        body: StreamBuilder(
+          stream: myStream(),
+          builder: (context, AsyncSnapshot snapshot) {
+            if (snapshot.hasData) {
+              return Center(
+                child: Text(snapshot.data.toString()),
+              );
+            }
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          },
+        ));
   }
 }
 
